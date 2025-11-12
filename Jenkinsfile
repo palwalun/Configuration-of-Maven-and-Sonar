@@ -4,7 +4,7 @@ pipeline {
           stage('Checkout'){
               steps{
                       echo "Getting code from Github"
-                      git 'https://github.com/palwalun/Configuration-of-Maven-and-Sonar.git' , 
+                      git url: 'https://github.com/palwalun/Configuration-of-Maven-and-Sonar.git' , 
                       branch: 'main' 
                     }
                    }
