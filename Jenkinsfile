@@ -22,7 +22,7 @@ pipeline {
                 steps{
                         echo "Running SonarQube Analysis"
                         withSonarQubeEnv('SonarQubeServer') {
-                            sh 'sh 'mvn sonar:sonar -Dsonar.host.url=http://<SONAR_IP>:9000 -Dsonar.login=<Jenkins-Token>'
+                        sh """ mvn sonar:sonar -Dsonar.host.url=http://172.31.172.16:9000/ -Dsonar.login=Jenkins-Token """
                         }      
                }  
          }     
