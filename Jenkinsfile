@@ -10,7 +10,7 @@ pipeline {
                    }
          stage('Build') {
               steps{ echo "Building the code"
-                      sh 'mvn clean compile test jacoco:report package'
+                      sh 'mvn clean package'
                    }
                }
          stage('Test') {
