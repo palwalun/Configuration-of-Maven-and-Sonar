@@ -19,11 +19,11 @@ pipeline {
                    }
                }
          stage('SonarQube Analysis') {
-              steps{ echo "Running SonarQube Analysis"
-              archievArtifacts artifacts: 'target/surefire-reports/*.xml', fingerprint: true
-                      withSonarQubeEnv('SonarQubeServer') {
-                      sh 'mvn sonar:sonar'
-                   }
+                steps{
+                        echo "Running SonarQube Analysis"
+                        withSonarQubeEnv('MySonarQubeServer') {
+                            sh 'mvn sonar:sonar'
+                        }      
                }  
          }                   
         }
