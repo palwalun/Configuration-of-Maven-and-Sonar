@@ -10,7 +10,7 @@ pipeline {
                    }
          stage('Build') {
               steps{ echo "Building the code"
-                      sh 'mvn clean package'
+                      sh 'mvn clean compile test jacoco:report package'
                    }
                }
          stage('Test') {
@@ -22,7 +22,7 @@ pipeline {
                 steps{
                         echo "Running SonarQube Analysis"
                         withSonarQubeEnv('SonarQubeServer') {
-                        sh """ mvn sonar:sonar -Dsonar.host.url=http://172.31.172.16:9000/ -Dsonar.login=Jenkins-Token-2 """
+                        sh """ mvn sonar:sonar -Dsonar.host.url=http://172.31.172.16:9000/ -Dsonar.login=Jenkins-Token-2  -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml"""
                         }      
                }  
          }     
