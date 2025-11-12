@@ -17,7 +17,7 @@ post {
             echo 'Build completed successfully!'
         }
         failure {
-            echo 'Build failed. Please check the logs.'
+            echo 'Build failed. Please check the logs'
         }
     }
 }
