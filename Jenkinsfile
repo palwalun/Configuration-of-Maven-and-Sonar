@@ -25,7 +25,12 @@ pipeline {
                             sh 'mvn sonar:sonar'
                         }      
                }  
-         }                   
+         }     
+         stage('Archive Artifacts') {
+                steps {
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                    }
+                 }              
         }
 post {
         success {
