@@ -13,6 +13,11 @@ pipeline {
                       sh 'mvn clean compile'
                    }
                }
+         stage('Test') {
+              steps{ echo "Running Unit Tests"
+                      sh 'mvn test'
+                   }
+               }
         }
 post {
         success {
