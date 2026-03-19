@@ -20,8 +20,6 @@ spec:
     image: javaapp.devopsproject2.azurecr.io
     ports:
       - containerPort: 8080
-	 
-	 
 ---
 
 apiVersion: v1
