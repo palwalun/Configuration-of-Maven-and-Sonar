@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
     - name: java-containers
-      image: javaapp.devopsproject2.azurecr.io
+      image: devopsproject2.azurecr.io/javaapp:latest
       ports:
        - containerPort: 8080
 ---
