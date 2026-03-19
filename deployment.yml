@@ -1,0 +1,37 @@
+apiVersion: apps/V1
+kind: Deployment
+metadata: 
+ name: javaapp-deployment
+ labels:
+  app: java
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: java
+ template:
+  metadata:
+   name: javaapp-pod
+   labels:
+    app: java
+  spec:
+   containers:
+    name: java-containers
+    image: javaapp.devopsproject2.azurecr.io
+    ports:
+      - containerPort: 8080
+	 
+	 
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: java-service
+spec:
+ type: ClusterIP
+ ports:
+ - targetPort: 8080
+   port: 80
+ selector:
+  app: java
