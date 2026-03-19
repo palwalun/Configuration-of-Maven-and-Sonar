@@ -1,4 +1,4 @@
-apiVersion: apps/V1
+apiVersion: apps/v1
 kind: Deployment
 metadata: 
  name: javaapp-deployment
@@ -16,10 +16,10 @@ spec:
     app: java
   spec:
    containers:
-    name: java-containers
-    image: javaapp.devopsproject2.azurecr.io
-    ports:
-      - containerPort: 8080
+    - name: java-containers
+      image: javaapp.devopsproject2.azurecr.io
+      ports:
+       - containerPort: 8080
 ---
 
 apiVersion: v1
