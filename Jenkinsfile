@@ -1,6 +1,9 @@
 pipeline{
  agent any
- 
+ environment {
+		ACR_LOGIN_SERVER = "devopsproject2.azurecr.io"
+		TAG = 'latest'
+    }
   stages{
    stage('Checkout'){
     steps{
