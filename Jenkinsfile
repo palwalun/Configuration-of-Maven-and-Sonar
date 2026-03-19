@@ -2,6 +2,7 @@ pipeline{
  agent any
  environment {
 		ACR_LOGIN_SERVER = "devopsproject2.azurecr.io"
+		IMAGE_NAME = 'javaapp'
 		TAG = 'latest'
     }
   stages{
